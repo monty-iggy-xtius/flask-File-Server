@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    overflow-x: hidden;
+
+    font-family: verdana, "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+.monty {
+    min-height: 100vh;
+    width: 100vw;
+    margin: auto;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.85), rgba(4, 9, 30, 0.65)), url(../images/fall.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    text-align: center;
+}
+
+.haf {
+    width: 100%;
+    height: 100%;
+    margin: 3% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    /*margin-left: 30%;*/
+}
+
+.tail {
+    background: rgba(29, 80, 160, 0.4);
+    margin: .25rem auto;
+    /*  flex-basis: 50%;*/
+    width: 61vw;
+    border-radius: 8px;
+    /*  padding: 3.35rem;*/
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    padding: 2.6rem 1rem;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 45px;
+    color: #fff;
+    padding-top: 5%;
+    zoom: normal;
+    letter-spacing: 2px;
+}
+
+
+p {
+    color: whitesmoke;
+    font-size: 24px;
+    font-family: Sans-Serif;
+    line-height: 18px;
+    padding: 10px;
+}
+
+#file-type-msg,
+#file-size-msg {
+    color: whitesmoke;
+    font-size: 14px;
+    padding: 2px 0;
+    text-align: left;
+}
+
+.kol input {
+    float: left;
+    margin-top: 20px;
+}
+
+.h1h2tags {
+    background: transparent;
+    font-size: 38px;
+    color: #ff4700;
+    margin: 1% auto;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+form {
+    word-break: normal;
+    overflow: hidden;
+    width: 100%;
+}
+
+#upload-btn {
+    width: 55%;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    padding: 8px 26px;
+    font-size: 16px;
+    background: #ff4700;
+    text-transform: capitalize;
+    /*  position: relative;*/
+    cursor: pointer;
+    transition: .6s all ease;
+}
+
+.back-home {
+    width: 25%;
+    margin: 2rem auto;
+
+    border: none;
+    padding: 8px 26px;
+    font-size: 16px;
+    background: rgb(8, 50, 73, 1);
+    text-transform: uppercase;
+
+    /*  position: relative;*/
+    cursor: pointer;
+    transition: .6s all ease;
+}
+
+.back-home a {
+    color: cyan;
+    text-decoration: none;
+}
+
+#nuh {
+    color: cyan;
+    font-family: Monospace;
+    font-size: 16px;
+    background-color: transparent;
+    height: 40px;
+
+}
+
+#upload-btn :hover {
+    background: rgb(8, 50, 73, 1);
+}
+
+#err-msg {
+    /*    width: 70%;*/
+    font-size: 1.2rem;
+    /*    padding: 0.61rem 1.15rem;*/
+    border-radius: 0.25rem;
+    font-weight: 400;
+    /*    background-color: #f8d7da;*/
+    color: tomato;
+    letter-spacing: 1px;
+    margin: 1.23rem auto;
+    text-align: center;
+}
+
+.upload-msg-box {
+    width: 70%;
+    background-color: #d4edda;
+    padding: 0.61rem 1.15rem;
+    border-radius: 0.25rem;
+    letter-spacing: 1px;
+    margin: 11px auto;
+    text-align: center;
+    font-weight: 400;
+}
+
+.upload-msg-box p {
+    color: #009688;
+        font-size: 1.2rem;
+
+}

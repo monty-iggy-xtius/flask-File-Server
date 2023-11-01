@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- title -->
+    <title>i3 - Home</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- site metas -->
+    <meta name="keywords" content="File Upload">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+     <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/style.css') }}">
+   
+</head>
+
+<body>
+    <section class="backi">
+        <nav>
+            <div class="mess" id="maKa">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('upload') }}">Upload File</a></li>
+                    <li><a href="https://github.com/monty-iggy-xtius" target="_blank" rel="noopener noreferrer">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1 class="h1h2tags">Photos</h1>
+        <div class="lupi">
+            {% if photos %}
+            {% for photo in photos %}
+            <div class="media-box">
+                <img src="{{ photo }}" alt="" download loading="eager">
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="no-content">
+                <p>Seems like there are no images</p>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+    <section class="nadi">
+        <h2 class="h1h2tags">More Items</h2>
+        <div class="lina">
+            {% if videos %}
+            <div class="nkop">
+                <h3>Videos</h3>
+                {% for video in videos %}
+                <p><a href="{{ video }}" download>{{ video.split("/")[-1].removesuffix(".mp4") }}</a></p>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if audios %}
+            <div class="nkop">
+                <h3>Audios</h3>
+                {% for audio in audios %}
+                <div class="aud-main">
+                    <div class="aud-op">
+                        <p><a href="{{ audio }}" download>{{ audio.split("/")[-1] }}</a></p>
+                    </div>
+                    <div class="aud">
+                        <audio autobuffer autoloop loop controls>
+                            <source src="{{ audio }}">
+                            <object type="audio/x-wav" data="{{ audio }}" width="290" height="45">
+                                <param name="src" value="/media/audio.wav">
+                                <param name="autoplay" value="false">
+                                <param name="autoStart" value="0">
+                                <p><a href="{{ audio }}" download>Download this audio file.</a></p>
+                            </object>
+                        </audio>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+
+            {% if apps %}
+            <div class="nkop">
+                <h3>Àpps</h3>
+                {% for app in apps %}
+                <p><a href="{{ app }}" download>{{ app.split("/")[-1] }}</a></p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        {% if others %}
+        <div class="nkop">
+            <h3>Others</h3>
+            {% for item in others %}
+            <p><a href="{{ item }}" download>{{ item.split("/")[-1] }}</a></p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if received %}
+        <div class="nkop">
+            <h3>Received Files</h3>
+            {% for received_file in received %}
+            <p><a href="{{ received_file }}" download>{{ received_file.split("/")[-1] }}</a></p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        </div>
+    </section>
+</body>
+
+</html>

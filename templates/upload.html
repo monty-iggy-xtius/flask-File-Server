@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- title -->
+    <title>i3 - Upload</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <meta name="keywords" content="File Upload">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/upload-style.css') }}">
+    <script defer src="{{ url_for('static', filename='assets/js/validate.js') }}" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <section class="monty">
+        <h2 class="h1h2tags">UPLOAD YOUR FILES</h2>
+        <p>Choose something to upload</p>
+        {% for message in get_flashed_messages() %}
+        
+        <div class="upload-msg-box">
+        <p> file {{ message.file }} uploaded! </p>
+        </div>
+
+        {% endfor %}
+        <p id="err-msg"></p>
+        <div class="haf">
+            <div class="tail">
+                <form id="form" class="kol" action="{{ url_for('process_upload') }}" method="post" enctype="multipart/form-data">
+                    <p id="file-type-msg"></p>
+                    <br>
+                    <p id="file-size-msg"></p>
+                    <input type="file" name="coming" id="nuh" value="montop" />
+                    <input type="submit" name="going" id="upload-btn" value="upload file" />
+                </form>
+               
+            </div>
+            <div class="back-home">
+              <a href="{{ url_for('home') }}">Home</a>
+            
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
